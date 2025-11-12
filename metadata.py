@@ -8,7 +8,7 @@ from utilities import config_value, main_folder
 # Путь к база данных метаданных
 def _metadata_db_path():
     # Имя файла базы наддых
-    metadata_db_name = config_value('MAIN', 'metadata_db_name', None)
+    metadata_db_name = config_value(None, 'MAIN', 'metadata_db_name', None)
     if metadata_db_name is None:
         raise ValueError("Не указано имя базы данных метаданных")
 
@@ -18,7 +18,7 @@ def _metadata_db_path():
 # Загрузка метаданных в базу данных
 def load_metadata() -> bool:
     # Имя файла метаданных
-    metadata_file_name = config_value('MAIN', 'metadata_file_name', None)
+    metadata_file_name = config_value(None, 'MAIN', 'metadata_file_name', None)
     if metadata_file_name is None:
         raise ValueError("Не указано имя файла метаданных")
     

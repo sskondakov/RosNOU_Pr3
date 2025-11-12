@@ -20,9 +20,9 @@ def main_folder() -> str:
     return _MAIN_FOLDER_PATH
 
 # Значение из конфигурационного файла
-def config_value(section: str, key: str, fallback: Any = None) -> Union[str, int, float, bool, None]:
-    # Чтение конфигурационного файла из папки конфигурации
-    config_path = os.path.join(main_folder(), 'config.ini')
+def config_value(path: Union[str, None], section: str, key: str, fallback: Any = None) -> Union[str, int, float, bool, None]:
+    # Чтение конфигурационного файла
+    config_path = os.path.join(main_folder(), 'config.ini') if path is None else path
     parser = configparser.ConfigParser()
     parser.read(config_path)
 
@@ -64,7 +64,7 @@ def set_logging_level(level: int):
 # Создание экземпляра логгера
 def _create_logger():
     # Чтение имени файлов лога и установка параметров логгирования
-    log_file_name = config_value('MAIN', 'log_file_name', 'events.log')
+    log_file_name = config_value(None, 'MAIN', 'log_file_name', 'events.log')
     logging.basicConfig(
         level=_LOGGING_LEVEL,
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',

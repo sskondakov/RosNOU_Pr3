@@ -103,25 +103,28 @@ class HTTPRequestHandler(BaseHTTPRequestHandler):
         # Отправка HTML-страницы
         self.wfile.write(b'<h1><b>SQL-assistant works.</b></h1>')
 
+# HTTP-сервер
+class MainHTTPServer(HTTPServer):
+    def serve_forever(self):
+        print(f'\nВеб-сервис запущен (порт: {self.server_address[1]}). Для остановки нажмите Ctrl+C...')
+
+        try:
+            super().serve_forever()
+
+        except KeyboardInterrupt:
+            print('\nВеб-сервис остановлен.')
+            self.server_close()
+
 # Старт веб-сервиса
-def run(server_class=HTTPServer, handler_class=HTTPRequestHandler):
+def run():
     # Определение порта
-    port = config_value('MAIN', 'port', None)
+    port = config_value(None, 'MAIN', 'port', None)
     if port is None:
         raise ValueError("Порт не задан")
 
-    print(f'''\nДля проверки запуска веб-севриса введите в браузере строку: localhost:{port},
-вы должны увидеть надпись: SQL-assistant works.
-
-Для проверки работы SQL-ассистента отправьте по адресу localhost:{port}
-POST запрос в формате JSON в кодировке UTF-8: {{"prompt": "Описание задачи"}}
-
-Веб-сервис запущен (порт: {port})...'''
-    )
-
     # Запуск веб-сервиса
     server_address = ('', port)
-    httpd = server_class(server_address, handler_class)
+    httpd = MainHTTPServer(server_address, HTTPRequestHandler)
     httpd.serve_forever()
 
 # Загрузка метаданных
@@ -136,25 +139,13 @@ def load_md():
 if __name__ == '__main__':
     if DEBUG_MODE:
         # Выбор режима работы
-        print('''Веб-сервис запущен в режиме отладки. Параметры запуска:
- start - запуск веб-сервиса в "боевом" режиме
+        print('''Программа запущена в режиме вывода отладочной информации. Параметры запуска:
+ start - запуск в режиме веб-сервиса (без вывода отладочной информации)
  upload - загрузка метаданных в базу данных
-
-Веб-сервис разработан для помощи продвинутым аналитикам в формирования запросов
-на языке запросов 1С:Предприятие 8.
-Для формирования файла метаданных необходимо воспользоваться внешней обработкой
-DumpMetadata.epf. Пример запроса к веб-сервису:
- headers:
-  Content-Length: 53
-  Content-type: application/json
- body: 
-  {"prompt": "Все покупки за неделю"}
-В состав поставки включен файл метаданных metadata1.json на основе конфигурации
-"Учет движения средств" книги "Язык запросов "1С:Предприятие 8".
-
+ 
 Выберите режим работы:
- [1] Отладка в консоли
- [2] Отладка веб-сервиса
+ [1] Работа в режиме консоли
+ [2] Работа в режиме веб-сервиса
  [3] Выход'''
         )
 

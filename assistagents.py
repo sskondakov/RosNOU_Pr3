@@ -73,7 +73,7 @@ class SQLAssistantAgent(BaseGigaChatAIAgent):
         self._logger = main_logger()
 
         # Получение имени модели LLM
-        model = config_value('GIGACHAT', 'model', None)
+        model = config_value(None, 'GIGACHAT', 'model', None)
         if model is None:
             raise Exception("Не указан модель GigaChat")
 
@@ -270,7 +270,7 @@ class CheckQueryAgent(BaseAIAgent):
     # Обращение к веб-сервису проверки запроса
     def _check_query(self, query: str) -> str:
         # Получение адреса веб-сервиса проверки
-        url = config_value('CHECK_QUERY', 'url', None)
+        url = config_value(None, 'CHECK_QUERY', 'url', None)
         if url is None:
             raise Exception("Не указан адрес веб-сервиса проверки запроса")
 

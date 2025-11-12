@@ -1,10 +1,12 @@
 from collections import deque
 
+import os
+
 from gigachat import GigaChat
 import gigachat.context
 from gigachat.models import Chat, Messages, MessagesRole
 
-from utilities import config_value
+from utilities import config_value, main_folder
 
 from agents import AIAgentMessage, BaseAIFunctions, BaseAIAgent
 
@@ -12,7 +14,7 @@ from agents import AIAgentMessage, BaseAIFunctions, BaseAIAgent
 class GigaChatHistory():
     def __init__(self, system_prompt: str):
         # Ограничение максимального размера контекста
-        max_context_length = config_value('GIGACHAT', 'max_context_length', None)
+        max_context_length = config_value(None, 'GIGACHAT', 'max_context_length', None)
         if max_context_length is None:
             raise Exception('Максимальная длина контекста GigaChat не установлена')
         self._max_context_length = max_context_length
@@ -90,14 +92,17 @@ class GigaChatHistory():
 # Базовый класс GigaChat AI-агента
 class BaseGigaChatAIAgent(BaseAIAgent):
     def __init__(self, system_prompt: str, model: str, functions: list):
+        # Личные данные храним в отдельном файле
+        config_path = os.path.join(main_folder(), 'gigakeys.ini')
+
         # Ключ авторизации GigaChat
-        authorization_key = config_value('GIGACHAT', 'authorization_key', None)
+        authorization_key = config_value(config_path, 'GIGACHAT', 'authorization_key', None)
         if authorization_key is None:
             raise Exception('Ключ авторизации GigaChat не установлен')
         self._authorization_key = authorization_key
         
         # Заголовки соединения с GigaChat: идентификатор сессия, ...
-        session_id = config_value('GIGACHAT', 'session_id', None)
+        session_id = config_value(config_path,'GIGACHAT', 'session_id', None)
         if session_id is None:
             raise Exception('Идентификатор сессия GigaChat не установлен')
         self._headers = {"X-Session-ID": session_id}
