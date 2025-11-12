@@ -1,0 +1,1 @@
+curl -X POST -H "Content-Type: application/json; charset=utf-8" -d "{\"prompt\": \"Продажи за неделю\"}" http://localhost:8000

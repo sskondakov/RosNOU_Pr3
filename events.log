@@ -1,0 +1,261 @@
+2025-11-10 09:29:51,475 - WebAssistant - DEBUG - Объект: SQLAssistantAgent
+ Запрос: AIAgentMessage(
+                function=BaseAIFunctions.content,
+                content=Все покупки за неделю,
+                is_answer=False,
+                reply_to=,
+                done=False,
+                error=None
+            )
+2025-11-10 09:29:51,657 - httpcore.connection - DEBUG - connect_tcp.started host='ngw.devices.sberbank.ru' port=9443 local_address=None timeout=30.0 socket_options=None
+2025-11-10 09:29:58,168 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000244D5F23620>
+2025-11-10 09:29:58,168 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x00000244D5FD7390> server_hostname='ngw.devices.sberbank.ru' timeout=30.0
+2025-11-10 09:29:58,277 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000244D5EC3110>
+2025-11-10 09:29:58,277 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-11-10 09:29:58,278 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-11-10 09:29:58,278 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-11-10 09:29:58,279 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-11-10 09:29:58,279 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-11-10 09:29:58,422 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'SynGX'), (b'Date', b'Mon, 10 Nov 2025 06:29:59 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'1279'), (b'Connection', b'keep-alive'), (b'Vary', b'Origin'), (b'Vary', b'Access-Control-Request-Method'), (b'Vary', b'Access-Control-Request-Headers'), (b'Cache-Control', b'no-cache, no-store, max-age=0, must-revalidate'), (b'Pragma', b'no-cache'), (b'Expires', b'0'), (b'X-Content-Type-Options', b'nosniff'), (b'Strict-Transport-Security', b'max-age=31536000 ; includeSubDomains'), (b'X-Frame-Options', b'DENY'), (b'X-XSS-Protection', b'0'), (b'Referrer-Policy', b'no-referrer'), (b'Allow', b'GET, POST'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-XSS-Protection', b'1; mode=block'), (b'X-Content-Type-Options', b'nosniff'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains')])
+2025-11-10 09:29:58,424 - httpx - INFO - HTTP Request: POST https://ngw.devices.sberbank.ru:9443/api/v2/oauth "HTTP/1.1 200 OK"
+2025-11-10 09:29:58,424 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-11-10 09:29:58,425 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-11-10 09:29:58,425 - httpcore.http11 - DEBUG - response_closed.started
+2025-11-10 09:29:58,425 - httpcore.http11 - DEBUG - response_closed.complete
+2025-11-10 09:29:58,425 - gigachat.client - DEBUG - OAUTH UPDATE TOKEN
+2025-11-10 09:29:58,428 - httpcore.connection - DEBUG - connect_tcp.started host='gigachat.devices.sberbank.ru' port=443 local_address=None timeout=30.0 socket_options=None
+2025-11-10 09:29:58,588 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000244D5FF8910>
+2025-11-10 09:29:58,588 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x00000244D5E098B0> server_hostname='gigachat.devices.sberbank.ru' timeout=30.0
+2025-11-10 09:29:58,705 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000244D5F9D940>
+2025-11-10 09:29:58,705 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-11-10 09:29:58,706 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-11-10 09:29:58,706 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-11-10 09:29:58,707 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-11-10 09:29:58,707 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-11-10 09:29:59,085 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'SynGX'), (b'Date', b'Mon, 10 Nov 2025 06:29:59 GMT'), (b'Content-Type', b'application/json; charset=utf-8'), (b'Content-Length', b'395'), (b'Connection', b'keep-alive'), (b'Access-Control-Allow-Credentials', b'true'), (b'Access-Control-Allow-Headers', b'Origin, X-Requested-With, Content-Type, Accept, Authorization'), (b'Access-Control-Allow-Methods', b'GET, POST, DELETE, OPTIONS'), (b'Access-Control-Allow-Origin', b'https://beta.saluteai.sberdevices.ru'), (b'X-Request-Id', b'89207fbe-c1d1-40a3-b86e-6f1c43695611'), (b'X-Session-Id', b'c93c7c30-7dea-4ce3-a995-2f19ceae6c2f'), (b'Allow', b'GET, POST'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-XSS-Protection', b'1; mode=block'), (b'X-Content-Type-Options', b'nosniff'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains')])
+2025-11-10 09:29:59,087 - httpx - INFO - HTTP Request: POST https://gigachat.devices.sberbank.ru/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-10 09:29:59,087 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-11-10 09:29:59,087 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-11-10 09:29:59,088 - httpcore.http11 - DEBUG - response_closed.started
+2025-11-10 09:29:59,088 - httpcore.http11 - DEBUG - response_closed.complete
+2025-11-10 09:29:59,089 - httpcore.connection - DEBUG - close.started
+2025-11-10 09:29:59,090 - httpcore.connection - DEBUG - close.complete
+2025-11-10 09:29:59,090 - httpcore.connection - DEBUG - close.started
+2025-11-10 09:29:59,090 - httpcore.connection - DEBUG - close.complete
+2025-11-10 09:29:59,091 - WebAssistant - DEBUG - Объект: SQLAssistantAgent
+ Ответ: AIAgentMessage(
+                function=AIFunctions.tables_list,
+                content=,
+                is_answer=False,
+                reply_to=SQLAssistantAgent,
+                done=False,
+                error=None
+            )
+2025-11-10 09:29:59,091 - WebAssistant - DEBUG - Объект: TablesListAgent
+ Запрос: AIAgentMessage(
+                function=AIFunctions.tables_list,
+                content=,
+                is_answer=False,
+                reply_to=SQLAssistantAgent,
+                done=False,
+                error=None
+            )
+2025-11-10 09:29:59,105 - WebAssistant - DEBUG - Объект: TablesListAgent
+ Ответ: AIAgentMessage(
+                function=AIFunctions.tables_list,
+                content={"tables_list": ["Константа.ОсновнаяОрганизация", "Константа.ОсновнойПоставщик", "Справочник.ДоговорыКонтрагентов", "Справочник.Контрагенты", "Справочник.Номенклатура", "Справочник.Организации", "Справочник.Пользователи", "Справочник.Склады", "Справочник.ТипыЦен", "Справочник.ФизическиеЛица", "Документ.ЗаказПокупателя", "Документ.ПоступлениеТоваров", "Документ.РеализацияТоваров", "Перечисление.ВидыДоговоров", "Перечисление.ВидыКонтрагентов", "Перечисление.ВидыОпераций", "Перечисление.РазмещениеЗаказовПокупателей", "РегистрСведений.ДоступКДокументам", "РегистрНакопления.ТоварыНаСкладах", "РегистрНакопления.Продажи", "РегистрНакопления.РезервыНоменклатуры"]},
+                is_answer=True,
+                reply_to=SQLAssistantAgent,
+                done=False,
+                error=None
+            )
+2025-11-10 09:29:59,105 - WebAssistant - DEBUG - Объект: SQLAssistantAgent
+ Запрос: AIAgentMessage(
+                function=AIFunctions.tables_list,
+                content={"tables_list": ["Константа.ОсновнаяОрганизация", "Константа.ОсновнойПоставщик", "Справочник.ДоговорыКонтрагентов", "Справочник.Контрагенты", "Справочник.Номенклатура", "Справочник.Организации", "Справочник.Пользователи", "Справочник.Склады", "Справочник.ТипыЦен", "Справочник.ФизическиеЛица", "Документ.ЗаказПокупателя", "Документ.ПоступлениеТоваров", "Документ.РеализацияТоваров", "Перечисление.ВидыДоговоров", "Перечисление.ВидыКонтрагентов", "Перечисление.ВидыОпераций", "Перечисление.РазмещениеЗаказовПокупателей", "РегистрСведений.ДоступКДокументам", "РегистрНакопления.ТоварыНаСкладах", "РегистрНакопления.Продажи", "РегистрНакопления.РезервыНоменклатуры"]},
+                is_answer=True,
+                reply_to=SQLAssistantAgent,
+                done=False,
+                error=None
+            )
+2025-11-10 09:29:59,109 - httpcore.connection - DEBUG - connect_tcp.started host='ngw.devices.sberbank.ru' port=9443 local_address=None timeout=30.0 socket_options=None
+2025-11-10 09:29:59,171 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000244D5F9CD60>
+2025-11-10 09:29:59,172 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x00000244D5E098B0> server_hostname='ngw.devices.sberbank.ru' timeout=30.0
+2025-11-10 09:29:59,237 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000244D5FA2450>
+2025-11-10 09:29:59,237 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-11-10 09:29:59,238 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-11-10 09:29:59,238 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-11-10 09:29:59,239 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-11-10 09:29:59,239 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-11-10 09:29:59,380 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'SynGX'), (b'Date', b'Mon, 10 Nov 2025 06:30:00 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'1279'), (b'Connection', b'keep-alive'), (b'Vary', b'Origin'), (b'Vary', b'Access-Control-Request-Method'), (b'Vary', b'Access-Control-Request-Headers'), (b'Cache-Control', b'no-cache, no-store, max-age=0, must-revalidate'), (b'Pragma', b'no-cache'), (b'Expires', b'0'), (b'X-Content-Type-Options', b'nosniff'), (b'Strict-Transport-Security', b'max-age=31536000 ; includeSubDomains'), (b'X-Frame-Options', b'DENY'), (b'X-XSS-Protection', b'0'), (b'Referrer-Policy', b'no-referrer'), (b'Allow', b'GET, POST'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-XSS-Protection', b'1; mode=block'), (b'X-Content-Type-Options', b'nosniff'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains')])
+2025-11-10 09:29:59,381 - httpx - INFO - HTTP Request: POST https://ngw.devices.sberbank.ru:9443/api/v2/oauth "HTTP/1.1 200 OK"
+2025-11-10 09:29:59,381 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-11-10 09:29:59,382 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-11-10 09:29:59,382 - httpcore.http11 - DEBUG - response_closed.started
+2025-11-10 09:29:59,382 - httpcore.http11 - DEBUG - response_closed.complete
+2025-11-10 09:29:59,382 - gigachat.client - DEBUG - OAUTH UPDATE TOKEN
+2025-11-10 09:29:59,385 - httpcore.connection - DEBUG - connect_tcp.started host='gigachat.devices.sberbank.ru' port=443 local_address=None timeout=30.0 socket_options=None
+2025-11-10 09:29:59,428 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000244D5FCC8D0>
+2025-11-10 09:29:59,428 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x00000244D5E09630> server_hostname='gigachat.devices.sberbank.ru' timeout=30.0
+2025-11-10 09:29:59,514 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000244D5FCC380>
+2025-11-10 09:29:59,514 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-11-10 09:29:59,515 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-11-10 09:29:59,515 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-11-10 09:29:59,515 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-11-10 09:29:59,516 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-11-10 09:30:00,477 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'SynGX'), (b'Date', b'Mon, 10 Nov 2025 06:30:01 GMT'), (b'Content-Type', b'application/json; charset=utf-8'), (b'Content-Length', b'471'), (b'Connection', b'keep-alive'), (b'Access-Control-Allow-Credentials', b'true'), (b'Access-Control-Allow-Headers', b'Origin, X-Requested-With, Content-Type, Accept, Authorization'), (b'Access-Control-Allow-Methods', b'GET, POST, DELETE, OPTIONS'), (b'Access-Control-Allow-Origin', b'https://beta.saluteai.sberdevices.ru'), (b'X-Request-Id', b'4fa9a3b7-0719-46d3-91c4-6cb0abf07f13'), (b'X-Session-Id', b'c93c7c30-7dea-4ce3-a995-2f19ceae6c2f'), (b'Allow', b'GET, POST'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-XSS-Protection', b'1; mode=block'), (b'X-Content-Type-Options', b'nosniff'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains')])
+2025-11-10 09:30:00,478 - httpx - INFO - HTTP Request: POST https://gigachat.devices.sberbank.ru/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-10 09:30:00,479 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-11-10 09:30:00,479 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-11-10 09:30:00,479 - httpcore.http11 - DEBUG - response_closed.started
+2025-11-10 09:30:00,479 - httpcore.http11 - DEBUG - response_closed.complete
+2025-11-10 09:30:00,480 - httpcore.connection - DEBUG - close.started
+2025-11-10 09:30:00,481 - httpcore.connection - DEBUG - close.complete
+2025-11-10 09:30:00,481 - httpcore.connection - DEBUG - close.started
+2025-11-10 09:30:00,482 - httpcore.connection - DEBUG - close.complete
+2025-11-10 09:30:00,482 - WebAssistant - DEBUG - Объект: SQLAssistantAgent
+ Ответ: AIAgentMessage(
+                function=AIFunctions.table_description,
+                content=Документ.ПоступлениеТоваров,
+                is_answer=False,
+                reply_to=SQLAssistantAgent,
+                done=False,
+                error=None
+            )
+2025-11-10 09:30:00,482 - WebAssistant - DEBUG - Объект: TableDescriptionAgent
+ Запрос: AIAgentMessage(
+                function=AIFunctions.table_description,
+                content=Документ.ПоступлениеТоваров,
+                is_answer=False,
+                reply_to=SQLAssistantAgent,
+                done=False,
+                error=None
+            )
+2025-11-10 09:30:00,486 - WebAssistant - DEBUG - Объект: TableDescriptionAgent
+ Ответ: AIAgentMessage(
+                function=AIFunctions.table_description,
+                content={"table_description": {"ИмяОбъекта": "Документ.ПоступлениеТоваров", "КраткоеОписание": "Поступление товаров", "ПодробноеОписание": "Поступление товаров", "Реквизиты": [{"Имя": "Проведен", "Тип": "Булево", "КраткоеОписание": "", "ПодробноеОписание": ""}, {"Имя": "Ссылка", "Тип": "Документ.ПоступлениеТоваров", "КраткоеОписание": "", "ПодробноеОписание": ""}, {"Имя": "ПометкаУдаления", "Тип": "Булево", "КраткоеОписание": "", "ПодробноеОписание": ""}, {"Имя": "Дата", "Тип": "Дата", "КраткоеОписание": "", "ПодробноеОписание": ""}, {"Имя": "Номер", "Тип": "Строка", "КраткоеОписание": "", "ПодробноеОписание": ""}, {"Имя": "Контрагент", "Тип": "Справочник.Контрагенты", "КраткоеОписание": "Контрагент", "ПодробноеОписание": "Контрагент"}, {"Имя": "Склад", "Тип": "Справочник.Склады", "КраткоеОписание": "Склад", "ПодробноеОписание": "Склад"}, {"Имя": "ВидОперации", "Тип": "Перечисление.ВидыОпераций", "КраткоеОписание": "Вид операции", "ПодробноеОписание": "Вид операции"}], "ТабличныеЧасти": [{"Имя": "Состав", "КраткоеОписание": "Состав", "ПодробноеОписание": "Состав", "Реквизиты": [{"Имя": "Ссылка", "Тип": "Документ.ПоступлениеТоваров", "КраткоеОписание": "", "ПодробноеОписание": ""}, {"Имя": "НомерСтроки", "Тип": "Число", "КраткоеОписание": "", "ПодробноеОписание": ""}, {"Имя": "Номенклатура", "Тип": "Справочник.Номенклатура", "КраткоеОписание": "Номенклатура", "ПодробноеОписание": "Номенклатура"}, {"Имя": "Количество", "Тип": "Число", "КраткоеОписание": "Количество", "ПодробноеОписание": "Количество"}, {"Имя": "Цена", "Тип": "Число", "КраткоеОписание": "Цена", "ПодробноеОписание": "Цена"}, {"Имя": "Сумма", "Тип": "Число", "КраткоеОписание": "Сумма", "ПодробноеОписание": "Сумма"}]}]}},
+                is_answer=True,
+                reply_to=SQLAssistantAgent,
+                done=False,
+                error=None
+            )
+2025-11-10 09:30:00,486 - WebAssistant - DEBUG - Объект: SQLAssistantAgent
+ Запрос: AIAgentMessage(
+                function=AIFunctions.table_description,
+                content={"table_description": {"ИмяОбъекта": "Документ.ПоступлениеТоваров", "КраткоеОписание": "Поступление товаров", "ПодробноеОписание": "Поступление товаров", "Реквизиты": [{"Имя": "Проведен", "Тип": "Булево", "КраткоеОписание": "", "ПодробноеОписание": ""}, {"Имя": "Ссылка", "Тип": "Документ.ПоступлениеТоваров", "КраткоеОписание": "", "ПодробноеОписание": ""}, {"Имя": "ПометкаУдаления", "Тип": "Булево", "КраткоеОписание": "", "ПодробноеОписание": ""}, {"Имя": "Дата", "Тип": "Дата", "КраткоеОписание": "", "ПодробноеОписание": ""}, {"Имя": "Номер", "Тип": "Строка", "КраткоеОписание": "", "ПодробноеОписание": ""}, {"Имя": "Контрагент", "Тип": "Справочник.Контрагенты", "КраткоеОписание": "Контрагент", "ПодробноеОписание": "Контрагент"}, {"Имя": "Склад", "Тип": "Справочник.Склады", "КраткоеОписание": "Склад", "ПодробноеОписание": "Склад"}, {"Имя": "ВидОперации", "Тип": "Перечисление.ВидыОпераций", "КраткоеОписание": "Вид операции", "ПодробноеОписание": "Вид операции"}], "ТабличныеЧасти": [{"Имя": "Состав", "КраткоеОписание": "Состав", "ПодробноеОписание": "Состав", "Реквизиты": [{"Имя": "Ссылка", "Тип": "Документ.ПоступлениеТоваров", "КраткоеОписание": "", "ПодробноеОписание": ""}, {"Имя": "НомерСтроки", "Тип": "Число", "КраткоеОписание": "", "ПодробноеОписание": ""}, {"Имя": "Номенклатура", "Тип": "Справочник.Номенклатура", "КраткоеОписание": "Номенклатура", "ПодробноеОписание": "Номенклатура"}, {"Имя": "Количество", "Тип": "Число", "КраткоеОписание": "Количество", "ПодробноеОписание": "Количество"}, {"Имя": "Цена", "Тип": "Число", "КраткоеОписание": "Цена", "ПодробноеОписание": "Цена"}, {"Имя": "Сумма", "Тип": "Число", "КраткоеОписание": "Сумма", "ПодробноеОписание": "Сумма"}]}]}},
+                is_answer=True,
+                reply_to=SQLAssistantAgent,
+                done=False,
+                error=None
+            )
+2025-11-10 09:30:00,489 - httpcore.connection - DEBUG - connect_tcp.started host='ngw.devices.sberbank.ru' port=9443 local_address=None timeout=30.0 socket_options=None
+2025-11-10 09:30:00,551 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000244D5FD9A50>
+2025-11-10 09:30:00,552 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x00000244D5E096D0> server_hostname='ngw.devices.sberbank.ru' timeout=30.0
+2025-11-10 09:30:00,616 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000244D5FD9B50>
+2025-11-10 09:30:00,616 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-11-10 09:30:00,617 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-11-10 09:30:00,617 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-11-10 09:30:00,618 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-11-10 09:30:00,618 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-11-10 09:30:00,762 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'SynGX'), (b'Date', b'Mon, 10 Nov 2025 06:30:01 GMT'), (b'Content-Type', b'application/json'), (b'Content-Length', b'1279'), (b'Connection', b'keep-alive'), (b'Vary', b'Origin'), (b'Vary', b'Access-Control-Request-Method'), (b'Vary', b'Access-Control-Request-Headers'), (b'Cache-Control', b'no-cache, no-store, max-age=0, must-revalidate'), (b'Pragma', b'no-cache'), (b'Expires', b'0'), (b'X-Content-Type-Options', b'nosniff'), (b'Strict-Transport-Security', b'max-age=31536000 ; includeSubDomains'), (b'X-Frame-Options', b'DENY'), (b'X-XSS-Protection', b'0'), (b'Referrer-Policy', b'no-referrer'), (b'Allow', b'GET, POST'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-XSS-Protection', b'1; mode=block'), (b'X-Content-Type-Options', b'nosniff'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains')])
+2025-11-10 09:30:00,763 - httpx - INFO - HTTP Request: POST https://ngw.devices.sberbank.ru:9443/api/v2/oauth "HTTP/1.1 200 OK"
+2025-11-10 09:30:00,763 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-11-10 09:30:00,763 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-11-10 09:30:00,764 - httpcore.http11 - DEBUG - response_closed.started
+2025-11-10 09:30:00,764 - httpcore.http11 - DEBUG - response_closed.complete
+2025-11-10 09:30:00,764 - gigachat.client - DEBUG - OAUTH UPDATE TOKEN
+2025-11-10 09:30:00,767 - httpcore.connection - DEBUG - connect_tcp.started host='gigachat.devices.sberbank.ru' port=443 local_address=None timeout=30.0 socket_options=None
+2025-11-10 09:30:00,822 - httpcore.connection - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000244D5F795E0>
+2025-11-10 09:30:00,823 - httpcore.connection - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x00000244D5FE8910> server_hostname='gigachat.devices.sberbank.ru' timeout=30.0
+2025-11-10 09:30:00,908 - httpcore.connection - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000244D5F796D0>
+2025-11-10 09:30:00,908 - httpcore.http11 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2025-11-10 09:30:00,908 - httpcore.http11 - DEBUG - send_request_headers.complete
+2025-11-10 09:30:00,909 - httpcore.http11 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2025-11-10 09:30:00,909 - httpcore.http11 - DEBUG - send_request_body.complete
+2025-11-10 09:30:00,909 - httpcore.http11 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2025-11-10 09:30:03,595 - httpcore.http11 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Server', b'SynGX'), (b'Date', b'Mon, 10 Nov 2025 06:30:04 GMT'), (b'Content-Type', b'application/json; charset=utf-8'), (b'Content-Length', b'971'), (b'Connection', b'keep-alive'), (b'Access-Control-Allow-Credentials', b'true'), (b'Access-Control-Allow-Headers', b'Origin, X-Requested-With, Content-Type, Accept, Authorization'), (b'Access-Control-Allow-Methods', b'GET, POST, DELETE, OPTIONS'), (b'Access-Control-Allow-Origin', b'https://beta.saluteai.sberdevices.ru'), (b'X-Request-Id', b'cd6427d8-27b1-400e-9e00-f6c98ada094c'), (b'X-Session-Id', b'c93c7c30-7dea-4ce3-a995-2f19ceae6c2f'), (b'Allow', b'GET, POST'), (b'X-Frame-Options', b'SAMEORIGIN'), (b'X-XSS-Protection', b'1; mode=block'), (b'X-Content-Type-Options', b'nosniff'), (b'Strict-Transport-Security', b'max-age=31536000; includeSubDomains')])
+2025-11-10 09:30:03,595 - httpx - INFO - HTTP Request: POST https://gigachat.devices.sberbank.ru/api/v1/chat/completions "HTTP/1.1 200 OK"
+2025-11-10 09:30:03,596 - httpcore.http11 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2025-11-10 09:30:03,596 - httpcore.http11 - DEBUG - receive_response_body.complete
+2025-11-10 09:30:03,596 - httpcore.http11 - DEBUG - response_closed.started
+2025-11-10 09:30:03,596 - httpcore.http11 - DEBUG - response_closed.complete
+2025-11-10 09:30:03,597 - httpcore.connection - DEBUG - close.started
+2025-11-10 09:30:03,597 - httpcore.connection - DEBUG - close.complete
+2025-11-10 09:30:03,598 - httpcore.connection - DEBUG - close.started
+2025-11-10 09:30:03,598 - httpcore.connection - DEBUG - close.complete
+2025-11-10 09:30:03,598 - WebAssistant - DEBUG - Объект: SQLAssistantAgent
+ Ответ: AIAgentMessage(
+                function=AIFunctions.check_query,
+                content=ВЫБРАТЬ
+	ПоступлениеТоваров.Ссылка КАК Ссылка,
+	ПоступлениеТоваров.Дата КАК Дата,
+	ПоступлениеТоваров.Контрагент КАК Контрагент,
+	ПоступлениеТоваров.Склад КАК Склад,
+	ПоступлениеТоваров.ВидОперации КАК ВидОперации
+ИЗ
+	Документ.ПоступлениеТоваров КАК ПоступлениеТоваров
+ГДЕ
+	ПоступлениеТоваров.Дата МЕЖДУ &НачалоНедели И &КонецНедели,
+                is_answer=False,
+                reply_to=SQLAssistantAgent,
+                done=False,
+                error=None
+            )
+2025-11-10 09:30:03,599 - WebAssistant - DEBUG - Объект: CheckQueryAgent
+ Запрос: AIAgentMessage(
+                function=AIFunctions.check_query,
+                content=ВЫБРАТЬ
+	ПоступлениеТоваров.Ссылка КАК Ссылка,
+	ПоступлениеТоваров.Дата КАК Дата,
+	ПоступлениеТоваров.Контрагент КАК Контрагент,
+	ПоступлениеТоваров.Склад КАК Склад,
+	ПоступлениеТоваров.ВидОперации КАК ВидОперации
+ИЗ
+	Документ.ПоступлениеТоваров КАК ПоступлениеТоваров
+ГДЕ
+	ПоступлениеТоваров.Дата МЕЖДУ &НачалоНедели И &КонецНедели,
+                is_answer=False,
+                reply_to=SQLAssistantAgent,
+                done=False,
+                error=None
+            )
+2025-11-10 09:30:03,604 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): localhost:80
+2025-11-10 09:30:07,674 - WebAssistant - ERROR - Ошибка при проверке текста запроса:
+ Ошибка при обращении к веб-сервису проверки запроса: HTTPConnectionPool(host='localhost', port=80): Max retries exceeded with url: /ACC_CASH/hs/CheckQuery/Check (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000244D5E2C440>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2025-11-10 09:30:07,674 - WebAssistant - DEBUG - Объект: CheckQueryAgent
+ Ответ: AIAgentMessage(
+                function=AIFunctions.check_query,
+                content=OK,
+                is_answer=True,
+                reply_to=SQLAssistantAgent,
+                done=False,
+                error=None
+            )
+2025-11-10 09:30:07,674 - WebAssistant - DEBUG - Объект: SQLAssistantAgent
+ Запрос: AIAgentMessage(
+                function=AIFunctions.check_query,
+                content=OK,
+                is_answer=True,
+                reply_to=SQLAssistantAgent,
+                done=False,
+                error=None
+            )
+2025-11-10 09:30:07,674 - WebAssistant - DEBUG - Объект: SQLAssistantAgent
+ Ответ: AIAgentMessage(
+                function=BaseAIFunctions.content,
+                content=ВЫБРАТЬ
+	ПоступлениеТоваров.Ссылка КАК Ссылка,
+	ПоступлениеТоваров.Дата КАК Дата,
+	ПоступлениеТоваров.Контрагент КАК Контрагент,
+	ПоступлениеТоваров.Склад КАК Склад,
+	ПоступлениеТоваров.ВидОперации КАК ВидОперации
+ИЗ
+	Документ.ПоступлениеТоваров КАК ПоступлениеТоваров
+ГДЕ
+	ПоступлениеТоваров.Дата МЕЖДУ &НачалоНедели И &КонецНедели,
+                is_answer=False,
+                reply_to=SQLAssistantAgent,
+                done=True,
+                error=None
+            )
