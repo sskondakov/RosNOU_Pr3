@@ -193,7 +193,7 @@ if __name__ == '__main__':
             load_md()
             
         print('\nРабота завершена.')
-        
+
     elif LOAD_MD_MODE:
         # Загрузка метаданных
         load_md()
