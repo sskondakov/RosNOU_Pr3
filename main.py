@@ -146,39 +146,51 @@ if __name__ == '__main__':
 Выберите режим работы:
  [1] Работа в режиме консоли
  [2] Работа в режиме веб-сервиса
- [3] Выход'''
+ [3] Выход (Ctrl+C)'''
         )
 
-        key = input('(1-3): ')
-        if key == '1':
+        mode = None
+        while mode is None:
+            try:
+                key = input('(1-3): ')
+            except KeyboardInterrupt:
+                key = '3'
+
+            if key == '1':
+                mode = 'console'
+            elif key == '2':
+                mode = 'web'
+            elif key == '3':
+                mode = 'exit'
+
+        if mode == 'console':
             # Загрузка метаданных
             load_md()
 
             is_working = True
             while is_working:
-                # Запрос описания задачи
-                prompt = input('\nОпишите задачу на формирование запроса: ')
-                print('\nОжидайте ответа...')
+                try:
+                    # Запрос описания задачи
+                    prompt = input('\nОпишите задачу (Ctrl+C для выхода): ')
+                    print('Ожидайте ответа...')
 
-                # Получения и вывод ответа
-                question = AIAgentMessage()
-                question.content = prompt
-                answer = AGENT_MANAGER.answer(question)
-                
-                print(f'\nОтвет:\n{answer.content}')
+                    # Получения и вывод ответа
+                    question = AIAgentMessage()
+                    question.content = prompt
+                    answer = AGENT_MANAGER.answer(question)
+                    
+                    print(f'\nОтвет:\n{answer.content}')
 
-                # Запрос на выход
-                key = input('\nВыход? (y/n): ')
-                if key == 'y':
+                except KeyboardInterrupt:
                     is_working = False
 
             print('\nРабота завершена.')
 
-        elif key == '2':
+        elif mode == 'web':
             # Запуск веб-сервиса
             run()
 
-        else:
+        elif mode == 'exit':
             print('\nРабота завершена.')
 
     elif LOAD_MD_MODE:
