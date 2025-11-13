@@ -140,33 +140,33 @@ if __name__ == '__main__':
     if DEBUG_MODE:
         print('''Программа запущена в режиме отладки. Параметры запуска:
  start - запуск веб-сервиса
- upload - загрузка метаданных в базу данных
+ upload - загрузка метаданных
  
 Выберите вариант работы:
  [1] Работа в консоли
  [2] Запуск веб-сервиса
- [3] Выход (Ctrl+C)'''
+ [3] Загрузка метаданных
+ [4] Выход (Ctrl+C)'''
         )
 
-        # Выбор режима работы
+        # Выбор варианта работы
         mode = None
         while mode is None:
             try:
                 key = input('(1-3): ')
             except KeyboardInterrupt:
-                key = '3'
+                key = '4'
 
             if key == '1':
                 mode = 'console'
             elif key == '2':
                 mode = 'web'
             elif key == '3':
+                mode = 'upload'
+            elif key == '4':
                 mode = 'exit'
 
         if mode == 'console':
-            # Загрузка метаданных
-            load_md()
-
             is_working = True
             while is_working:
                 try:
@@ -184,15 +184,16 @@ if __name__ == '__main__':
                 except KeyboardInterrupt:
                     is_working = False
 
-            print('\nРабота завершена.')
-
         elif mode == 'web':
             # Запуск веб-сервиса
             run()
 
-        elif mode == 'exit':
-            print('\nРабота завершена.')
-
+        elif mode == 'upload':
+            # Загрузка метаданных
+            load_md()
+            
+        print('\nРабота завершена.')
+        
     elif LOAD_MD_MODE:
         # Загрузка метаданных
         load_md()
