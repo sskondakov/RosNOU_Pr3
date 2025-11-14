@@ -1,21 +1,24 @@
+import os
+import sys
+
+# Пути к папкам скрипта и сторонних библиотек
+script_path = os.path.dirname(os.path.abspath(__file__))
+packages_path = os.path.join(os.path.dirname(sys.executable), 'Lib', 'site-packages')
+
+# Устанавливаем папки для импорта модулей
+if packages_path not in sys.path:
+    sys.path.insert(0, packages_path)
+if script_path not in sys.path:
+    sys.path.insert(0, script_path)
+
 import json
 
 import requests
 
-import os
-
 from utilities import set_main_folder, config_value
 
-# Путь к папке файлов AI-асистента
-if getattr(sys, 'frozen', False):
-    # Если приложение упаковано cx_Freeze
-    project_path = os.path.dirname(sys.executable)
-else:
-    # Если запускается как обычный скрипт
-    project_path = os.path.dirname(os.path.abspath(__file__))
-
-# Устанавливаем путь для использования во всех модулях
-set_main_folder(project_path)
+# Устанавливаем основную папку проекта
+set_main_folder(script_path)
 
 # Адрес и порт веб-сервиса
 url = 'http://localhost'
