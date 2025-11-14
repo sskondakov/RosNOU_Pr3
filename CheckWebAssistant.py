@@ -6,8 +6,16 @@ import os
 
 from utilities import set_main_folder, config_value
 
-# Путь к папке настроек
-set_main_folder(os.path.dirname(os.path.abspath(__file__)))
+# Путь к папке файлов AI-асистента
+if getattr(sys, 'frozen', False):
+    # Если приложение упаковано cx_Freeze
+    project_path = os.path.dirname(sys.executable)
+else:
+    # Если запускается как обычный скрипт
+    project_path = os.path.dirname(os.path.abspath(__file__))
+
+# Устанавливаем путь для использования во всех модулях
+set_main_folder(project_path)
 
 # Адрес и порт веб-сервиса
 url = 'http://localhost'

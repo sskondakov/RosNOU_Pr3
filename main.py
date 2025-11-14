@@ -1,7 +1,17 @@
-import json
-
 import os
 import sys
+
+# Пути к папкам скрипта и сторонних библиотек
+script_path = os.path.dirname(os.path.abspath(__file__))
+packages_path = os.path.join(os.path.dirname(sys.executable), 'Lib', 'site-packages')
+
+# Устанавливаем папки для импорта модулей
+if packages_path not in sys.path:
+    sys.path.insert(0, packages_path)
+if script_path not in sys.path:
+    sys.path.insert(0, script_path)
+
+import json
 
 import logging
 
@@ -12,8 +22,8 @@ from assistagents import TablesListAgent, TableDescriptionAgent, SQLAssistantAge
 from metadata import load_metadata
 from utilities import set_main_folder, config_value, set_logging_level, main_logger
 
-# Путь к папке файлов AI-асистента
-set_main_folder(os.path.dirname(os.path.abspath(__file__)))
+# Устанавливаем основную папку проекта
+set_main_folder(script_path)
 
 # Определение режима запуска
 DEBUG_MODE = True
@@ -153,7 +163,7 @@ if __name__ == '__main__':
         mode = None
         while mode is None:
             try:
-                key = input('(1-3): ')
+                key = input('(1-4): ')
             except KeyboardInterrupt:
                 key = '4'
 
