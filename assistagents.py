@@ -327,7 +327,7 @@ class CheckQueryAgent(BaseAIAgent):
             self._logger.error(f"Ошибка при проверке текста запроса:\n {str(e)}")
 
             # Базовая проверка
-            if question.content.startswith('ВЫБРАТЬ'):
+            if question.content.upper().startswith('ВЫБРАТЬ'):
                 result = 'OK'
             else:
                 result = 'Нужен только текст на языке запросов 1С 8.3'
