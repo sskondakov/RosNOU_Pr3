@@ -1,6 +1,6 @@
 __pycache__
-amd64/Lib/site-packages/*
-!amd64/Lib/site-packages/requirements.txt
+amd64/Lib/*
+!amd64/Lib/site-packages.zip
 other
 clear_cache.bat
 events.log
