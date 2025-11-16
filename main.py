@@ -1,16 +1,6 @@
 import os
 import sys
 
-# Пути к папкам скрипта и сторонних библиотек
-script_path = os.path.dirname(os.path.abspath(__file__))
-packages_path = os.path.join(os.path.dirname(sys.executable), 'Lib', 'site-packages')
-
-# Устанавливаем папки для импорта модулей
-if packages_path not in sys.path:
-    sys.path.insert(0, packages_path)
-if script_path not in sys.path:
-    sys.path.insert(0, script_path)
-
 import json
 
 import logging
@@ -21,6 +11,9 @@ from agents import BaseAIAgentManager, AIAgentMessage
 from assistagents import TablesListAgent, TableDescriptionAgent, SQLAssistantAgent, CheckQueryAgent
 from metadata import load_metadata
 from utilities import set_main_folder, config_value, set_logging_level, main_logger
+
+# Путm к папкам скрипта
+script_path = os.path.dirname(os.path.abspath(__file__))
 
 # Устанавливаем основную папку проекта
 set_main_folder(script_path)

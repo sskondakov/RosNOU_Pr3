@@ -1,4 +1,7 @@
 __pycache__
-embed
+amd64/Lib/site-packages/*
+!amd64/Lib/site-packages/requirements.txt
+other
+clear_cache.bat
 events.log
 gigakeys.ini
