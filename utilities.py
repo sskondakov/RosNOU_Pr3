@@ -29,7 +29,8 @@ def config_value(path: Union[str, None], section: str, key: str, fallback: Any =
     # Приведение представления значения к соответствующему типу
     try:
         value_str = parser.get(section, key, fallback=fallback)
-
+        if value_str is None:
+            return fallback
         if value_str.lower() in ('true', 'yes', '1', 'on'):
             return True
         if value_str.lower() in ('false', 'no', '0', 'off'):
