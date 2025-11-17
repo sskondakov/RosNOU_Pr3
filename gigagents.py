@@ -4,6 +4,7 @@ import os
 
 from gigachat import GigaChat
 import gigachat.context
+from gigachat.exceptions import AuthenticationError, ResponseError
 from gigachat.models import Chat, Messages, MessagesRole
 
 from utilities import config_value, main_folder
@@ -125,7 +126,7 @@ class BaseGigaChatAIAgent(BaseAIAgent):
         else:
             self._chat_history.add_user_content(content)
         
-        # Отправка сообщений чата в GigaChat
+        # Экземпляр чата с GigaChat
         with GigaChat(
             credentials=self._authorization_key,
             scope="GIGACHAT_API_PERS",
@@ -133,14 +134,24 @@ class BaseGigaChatAIAgent(BaseAIAgent):
         ) as giga:
             gigachat.context.session_id_cvar.set(self._headers.get("X-Session-ID"))
 
+            # Новое сообщение в чат
             chat = Chat(
                 messages=self._chat_history.messages(),
                 model=self._model,
                 functions=self._functions
             )
-            response = giga.chat(chat)
 
-        # Добавление сообщения ассистента в чат
+            # Получение ответа от чата
+            try:
+                response = giga.chat(chat)
+
+            except AuthenticationError as e:
+                raise Exception(f"Ошибка авторизации в GigaChat: {e}")
+
+            except ResponseError as e:
+                raise Exception(f"Ошибка получения ответа GigaChat: {e}")
+
+        # Добавление ответа ассистента в чат
         chat_message = response.choices[0].message
         self._chat_history.add_message(chat_message)
 
